@@ -44,11 +44,4 @@ class SizeFolder:
         return table
 
 
-if __name__ == "__main__":
-    try:
-        try:
-            print(SizeFolder(os.getcwd()).table_info())
-        except FileNotFoundError as e:
-            print(f'[INFO] {e}')
-    except KeyboardInterrupt:
-        print('[INFO] End')
+
