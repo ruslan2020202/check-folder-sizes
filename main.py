@@ -2,8 +2,6 @@ import os
 from prettytable import PrettyTable
 from math import pow
 
-test_url = "/Users/user/PycharmProjects/SizeFolders"
-
 
 class SizeFolder:
     schema_size_files = {
@@ -45,5 +43,14 @@ class SizeFolder:
 
 
 if __name__ == "__main__":
-    size_folder = SizeFolder(test_url)
-    print(size_folder.table_info())
+    try:
+        while True:
+            try:
+                url = input('>>')
+                if url == 'exit':
+                    raise KeyboardInterrupt
+                print(SizeFolder(url.strip()).table_info())
+            except FileNotFoundError as e:
+                print(f'[INFO] {e}')
+    except KeyboardInterrupt:
+        print('[INFO] End')
