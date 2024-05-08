@@ -32,6 +32,8 @@ class SizeFolder:
         Converting from bytes to the maximum available
         unit of measurement greater than zero
         """
+        if size == 0:
+            return "0 B"
         return next(f'{size // j} {i}' for i, j in reversed(self.schema_size_files.items()) if size >= j)
 
     def table_info(self):
@@ -44,13 +46,9 @@ class SizeFolder:
 
 if __name__ == "__main__":
     try:
-        while True:
-            try:
-                url = input('>>')
-                if url == 'exit':
-                    raise KeyboardInterrupt
-                print(SizeFolder(url.strip()).table_info())
-            except FileNotFoundError as e:
-                print(f'[INFO] {e}')
+        try:
+            print(SizeFolder(os.getcwd()).table_info())
+        except FileNotFoundError as e:
+            print(f'[INFO] {e}')
     except KeyboardInterrupt:
         print('[INFO] End')
