@@ -23,12 +23,11 @@ class SizeFolder:
                 if i.is_file():
                     total += i.stat().st_size
                 elif i.is_dir():
-                    total += self.get_size_folder(i.path)
+                    if not i.is_symlink():
+                        total += self.get_size_folder(i.path)
         except NotADirectoryError:
             return os.stat(dir).st_size
-        except PermissionError:
-            return 0
-        except FileNotFoundError:
+        except PermissionError or FileNotFoundError:
             return 0
         return total
 
