@@ -33,11 +33,11 @@ class SizeFolder:
         return total
 
     def made_json(self) -> dict[str, int]:
-        size = {}
         """
         Returns a sorted dictionary where the key
         is the folder and the value is the size of its contents in bytes
         """
+        size = {}
         for i in os.scandir(self.path):
             if i.is_file():
                 size[i.name] = i.stat().st_size
