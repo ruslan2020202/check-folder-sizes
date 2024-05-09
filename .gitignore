@@ -1,3 +1,5 @@
+__pycache__/
 .idea/
-size_folders_package.egg-info
-build
+build/
+size_folders_package.egg-info/
+venv/
