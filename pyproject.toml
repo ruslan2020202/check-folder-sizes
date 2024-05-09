@@ -1,0 +1,9 @@
+[project]
+name = "size-folders-package"
+version = "1.0.0"
+dependencies = [
+    "prettytable==3.10.0",
+]
+
+[project.scripts]
+size-folders = "size_folders_package.__main__:main"
