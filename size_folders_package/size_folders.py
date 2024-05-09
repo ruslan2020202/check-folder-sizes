@@ -2,8 +2,6 @@ import os
 from prettytable import PrettyTable
 from math import pow
 
-test_url = "/Users/user/Desktop"
-
 
 class SizeFolder:
     schema_size_files = {
@@ -17,6 +15,7 @@ class SizeFolder:
         self.path = path
 
     def get_size_folder(self, dir: str) -> int:
+        """Gets the size of the contents of a folder"""
         total = 0
         try:
             for i in os.scandir(dir):
@@ -45,7 +44,7 @@ class SizeFolder:
         size_folders = {k: v for k, v in sorted(size.items(), key=lambda x: x[1], reverse=True)}
         return size_folders
 
-    def change_size_format(self, size) -> str:
+    def change_size_format(self, size: int) -> str:
         """
         Converting from bytes to the maximum available
         unit of measurement greater than zero

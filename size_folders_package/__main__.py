@@ -3,10 +3,7 @@ from .size_folders import *
 
 def main():
     try:
-        try:
-            print(SizeFolder(os.getcwd()).table_info())
-        except FileNotFoundError as e:
-            print(f'[INFO] {e}')
+        print(SizeFolder(os.getcwd()).table_info())
     except KeyboardInterrupt:
         print('[INFO] End')
 
