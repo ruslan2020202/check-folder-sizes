@@ -6,4 +6,4 @@ dependencies = [
 ]
 
 [project.scripts]
-size_folders = "size_folders_package.__main__:main"
+foldersize = "size_folders_package.__main__:main"

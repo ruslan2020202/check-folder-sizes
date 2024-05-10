@@ -18,7 +18,7 @@ To use the script:
 2. Run the following command
 
 ```bash
-size_folders
+foldersize
 ```
 
 <b>Ready! Now you will see a sorted and formatted table with data and its sizes</b>

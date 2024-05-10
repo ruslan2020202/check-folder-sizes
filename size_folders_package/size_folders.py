@@ -30,7 +30,7 @@ class SizeFolder:
             return 0
         return total
 
-    def made_json(self) -> dict[str, int]:
+    def assembly_dictionary(self) -> dict[str, int]:
         """
         Returns a sorted dictionary where the key
         is the folder and the value is the size of its contents in bytes
@@ -57,5 +57,5 @@ class SizeFolder:
         """Tabular presentation of data"""
         table = PrettyTable()
         table.field_names = ["№", 'Folder/file', 'Size']
-        [table.add_row((i + 1, j[0], self.change_size_format(j[1]))) for i, j in enumerate(self.made_json().items())]
+        [table.add_row((i + 1, j[0], self.change_size_format(j[1]))) for i, j in enumerate(self.assembly_dictionary().items())]
         return table
